@@ -12,7 +12,9 @@ public class EmployeeService {
 
     private final EmployeeDAO empDAO;
 
-    public EmployeeService() { empDAO = new EmployeeDAO(); }
+    public EmployeeService() {
+
+        empDAO = new EmployeeDAO(); }
 
     public List<EmployeeDTO> selectAllEmp() {
 
@@ -41,6 +43,17 @@ public class EmployeeService {
         }
 
         close(con);
+
+        return result;
+    }
+
+    public EmployeeDTO SelectOneById(int empId) {
+        Connection conn = getConnection();
+        //System.out.println("커넥션 확인"+conn);
+
+        EmployeeDTO result = empDAO.selectEmpById(conn,empId);
+        //System.out.println(result);
+        close(conn);
 
         return result;
     }

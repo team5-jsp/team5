@@ -4,23 +4,26 @@
     <title>Title</title>
 </head>
 <body>
-    
+    <jsp:include page="../common/header.jsp"/>
+
+    <hr>
+
     <h3>1. 전체 직원 정보 조회</h3>
     <p>(재직중인 직원만 조회됩니다.)</p>
     <button onclick="location.href='${pageContext.servletContext.contextPath}/employee/list'">전체 직원정보 조회하기</button>
     
     <hr>
-
-    <h3>2. tbl_employee 테이블에서 emp_id를 이용하여 사원 정보 조회해오기</h3>
+    <h3>2. 직원 정보 조회</h3>
+    <p>(조회할 직원의 사번을 입력하세요.)</p>
     <form action="select/one" method="post">
-        <label>조회할 사번</label>
+        <label>사번 : </label>
         <input type="number" name="empId" value="empId">
         <button type="submit">조회하기</button>
     </form>
     
     <hr>
 
-    <h3>3. 신규 직원 정보 추가하기</h3>
+    <h3>3. 신규 직원 정보 추가</h3>
     <form action="${ pageContext.servletContext.contextPath }/employee/insert" method="post">
         직원명 : <input type="text" name="empName"><br>
         주민등록번호 : <input type="text" name="empNo"><br>
@@ -68,9 +71,8 @@
     </form>
 
     <hr>
-
-    <h3>4. tbl_employee 테이블에서 직원 정보 수정</h3>
-    <p>(직원 퇴사시키기) : POST /employee/update</p>
+    <h3>4. 직원 정보 수정</h3>
+    <p>(재직 -> 퇴직)</p>
     <form action="${ pageContext.servletContext.contextPath }/employee/update" method="post">
         사번 : <input type="text" name="empId"><br>
         퇴사일 : <input type="date" name="entDate"><br>

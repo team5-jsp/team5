@@ -15,11 +15,11 @@
 <h1> 조회된 사원 정보</h1>
 <hr>
 <div>
-    <label>사번 :${employee.empId} </label>
-    <label>이름 :${employee.empId} </label>
-    <label> ㅁㅁ:${employee.empId} </label>
-    <label>사번 :${employee.empId} </label>
-
+    <label>사번 :${employee.empId} </label><br>
+    <label>이름 :${employee.empName} </label><br>
+    <label>부서 코드 :${employee.deptCode} </label><br>
+    <label>직급 코드 :${employee.jobCode} </label><br>
+    <label>급여 :${employee.salary} </label><br>
 </div>
 </body>
 </html>

@@ -4,14 +4,19 @@
     <title>Title</title>
 </head>
 <body>
+    <jsp:include page="../common/header.jsp"/>
+    
+    <hr>
     
     <h3>1. 전체 직원 정보 조회</h3>
     <p>(재직중인 직원만 조회됩니다.)</p>
     <button onclick="location.href='${pageContext.servletContext.contextPath}/employee/list'">전체 직원정보 조회하기</button>
     
     <hr>
+    <h3>2. 직원 정보 조회</h3>
+    <p>(조회할 직원의 사번을 입력하세요.)</p>
     <form action="select/one" method="post">
-        <label>조회할 사번</label>
+        <label>사번 : </label>
         <input type="number" name="empId" value="empId">
         <button type="submit">조회하기</button>
     </form>

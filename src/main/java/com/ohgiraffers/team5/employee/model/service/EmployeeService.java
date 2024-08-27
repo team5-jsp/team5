@@ -22,6 +22,7 @@ public class EmployeeService {
         /* 비지니스 로직*/
         List<EmployeeDTO> empList = empDAO.selectAllEmpList(con);
 
+
         close(con);
 
         return empList;

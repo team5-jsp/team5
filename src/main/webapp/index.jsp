@@ -2,9 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>team5</title>
+    <title>JSP - Hello World</title>
 </head>
 <body>
-    <jsp:forward page="/WEB-INF/views/main/main.jsp"/>
+<h1><%= "Hello World!" %>
+</h1>
+<br/>
+<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>

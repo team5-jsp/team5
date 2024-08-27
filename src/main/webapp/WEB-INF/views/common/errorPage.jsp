@@ -4,5 +4,6 @@
     <title>Title</title>
 </head>
 <body>
+    <h1> ${requestScope.message}</h1>
 </body>
 </html>

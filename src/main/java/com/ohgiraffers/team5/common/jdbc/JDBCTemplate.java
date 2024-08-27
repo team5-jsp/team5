@@ -1,6 +1,6 @@
 package com.ohgiraffers.team5.common.jdbc;
 
-import com.ohgiraffers.mvc.common.config.ConfigLocation;
+import com.ohgiraffers.team5.common.config.ConfigLocation;
 
 import java.io.FileReader;
 import java.io.IOException;

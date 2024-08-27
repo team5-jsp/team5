@@ -1,7 +1,7 @@
 package com.ohgiraffers.team5.employee.controller;
 
 import com.ohgiraffers.team5.employee.model.dto.EmployeeDTO;
-import com.ohgiraffers.team5.employee.service.EmployeeService;
+import com.ohgiraffers.team5.employee.model.service.EmployeeService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

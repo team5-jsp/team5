@@ -63,5 +63,10 @@ public class EmployeeService {
 
         return result;
     }
+
+    public EmployeeDTO SelectOneById(int i) {
+
+        return null;
+    }
 }
 

@@ -6,8 +6,7 @@ import com.ohgiraffers.team5.employee.model.dto.EmployeeDTO;
 import java.sql.Connection;
 import java.util.List;
 
-import static com.ohgiraffers.team5.common.jdbc.JDBCTemplate.close;
-import static com.ohgiraffers.team5.common.jdbc.JDBCTemplate.getConnection;
+import static com.ohgiraffers.team5.common.jdbc.JDBCTemplate.*;
 
 public class EmployeeService {
 
@@ -16,16 +15,36 @@ public class EmployeeService {
     public EmployeeService() { empDAO = new EmployeeDAO(); }
 
     public List<EmployeeDTO> selectAllEmp() {
+        return null;
+    }
 
-        /* Connection */
+    /* 정은 */
+    public String selectNewEmpId() {
+
         Connection con = getConnection();
 
-        /* 비지니스 로직*/
-        List<EmployeeDTO> empList = empDAO.selectAllEmpList(con);
+        String newEmpId = empDAO.selectNewEmpId(con);
 
         close(con);
 
-        return empList;
+        return newEmpId;
+    }
 
+    public int insertEmp(EmployeeDTO emp) {
+
+        Connection con = getConnection();
+
+        int result = empDAO.insertEmp(con, emp);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+
+        close(con);
+
+        return result;
     }
 }
+

@@ -5,6 +5,9 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
+<h1><%= "Hello World!" %>
+</h1>
+<br/>
 <jsp:forward page="/WEB-INF/views/main/main.jsp"/>
 </body>
 </html>

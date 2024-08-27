@@ -1,6 +1,6 @@
 package com.ohgiraffers.team5.common.filter;
 
-import com.ohgiraffers.mvc.common.config.ConfigLocation;
+import com.ohgiraffers.team5.common.config.ConfigLocation;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 

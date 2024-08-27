@@ -15,9 +15,19 @@ public class EmployeeService {
     public EmployeeService() { empDAO = new EmployeeDAO(); }
 
     public List<EmployeeDTO> selectAllEmp() {
-        return null;
-    }
 
+        /* Connection */
+        Connection con = getConnection();
+
+        /* 비지니스 로직*/
+        List<EmployeeDTO> empList = empDAO.selectAllEmpList(con);
+
+
+        close(con);
+
+        return empList;
+
+    }
     /* 정은 */
     public String selectNewEmpId() {
 
@@ -68,25 +78,6 @@ public class EmployeeService {
         return result;
     }
 
-    public int updateEmp(EmployeeDTO emp) {
-
-        Connection con = getConnection();
-
-        System.out.println("con = " + con);
-
-        int result = empDAO.updateEmp(con, emp);
-
-        if (result > 0) {
-            commit(con);
-        } else {
-            rollback(con);
-        }
-
-        close(con);
-
-        return result;
-    }
-
     public int deleteEmp(String empId) {
 
         Connection con = getConnection();
@@ -103,6 +94,15 @@ public class EmployeeService {
 
         return result;
     }
+    public EmployeeDTO SelectOneById(int empId) {
+        Connection conn = getConnection();
+        //System.out.println("커넥션 확인"+conn);
 
+        EmployeeDTO result = empDAO.selectEmpById(conn,empId);
+        //System.out.println(result);
+        close(conn);
+
+        return result;
+    }
 }
 

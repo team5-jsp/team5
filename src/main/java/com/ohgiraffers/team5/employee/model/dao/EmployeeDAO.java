@@ -182,7 +182,6 @@ public class EmployeeDAO {
         return result;
     }
 
-
     public EmployeeDTO selectEmpById(Connection conn, int empId) {
         PreparedStatement stmt = null;
         ResultSet rest = null;

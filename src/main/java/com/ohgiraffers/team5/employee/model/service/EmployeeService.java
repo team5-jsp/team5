@@ -26,6 +26,7 @@ public class EmployeeService {
         String newEmpId = empDAO.selectNewEmpId(con);
 
 
+
         close(con);
 
         return newEmpId;
@@ -36,6 +37,25 @@ public class EmployeeService {
         Connection con = getConnection();
 
         int result = empDAO.insertEmp(con, emp);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+
+        close(con);
+
+        return result;
+    }
+
+    public int updateEmp(EmployeeDTO emp) {
+
+        Connection con = getConnection();
+
+        System.out.println("con = " + con);
+
+        int result = empDAO.updateEmp(con, emp);
 
         if (result > 0) {
             commit(con);

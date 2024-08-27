@@ -4,12 +4,9 @@
     <title>Title</title>
 </head>
 <body>
+
     <hr>
-    <form action="select/one" method="post">
-        <label>조회할 사번</label>
-        <input type="number" name="empId" value="empId">
-        <button type="submit">조회하기</button>
-    </form>
+    
     
     <hr>
     

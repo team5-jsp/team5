@@ -6,8 +6,7 @@ import com.ohgiraffers.team5.employee.model.dto.EmployeeDTO;
 import java.sql.Connection;
 import java.util.List;
 
-import static com.ohgiraffers.team5.common.jdbc.JDBCTemplate.close;
-import static com.ohgiraffers.team5.common.jdbc.JDBCTemplate.getConnection;
+import static com.ohgiraffers.team5.common.jdbc.JDBCTemplate.*;
 
 public class EmployeeService {
 
@@ -27,5 +26,22 @@ public class EmployeeService {
 
         return empList;
 
+    }
+
+    public int deleteEmp(String empId) {
+
+        Connection con = getConnection();
+
+        int result = empDAO.deleteEmp(con, empId);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+
+        close(con);
+
+        return result;
     }
 }

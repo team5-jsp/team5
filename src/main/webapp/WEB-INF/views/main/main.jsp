@@ -65,7 +65,7 @@
         <br>
         급여 : <input type="number" name="salary"><br>
         보너스율 : <input type="text" name="bonus"><br>
-        관리자사번 : <input type="text" name="managerId"><br>
+        관리자사번 : (3자리 숫자)<input type="text" name="managerId"><br>
         입사일 : <input type="date" name="hireDate"><br>
         <button type="submit">등록하기</button>
     </form>

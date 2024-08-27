@@ -2,6 +2,16 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    </style>
 </head>
 <body>
     <jsp:include page="../common/header.jsp"/>
@@ -10,7 +20,7 @@
 
     <h3>1. 전체 직원 정보 조회</h3>
     <p>(재직중인 직원만 조회됩니다.)</p>
-    <button onclick="location.href='${pageContext.servletContext.contextPath}/employee/list'">전체 직원정보 조회하기</button>
+    <button type="button" class="btn btn-dark" onclick="location.href='${pageContext.servletContext.contextPath}/employee/list'">전체 직원정보 조회하기</button>
     
     <hr>
     <h3>2. 직원 정보 조회</h3>
@@ -18,7 +28,7 @@
     <form action="select/one" method="post">
         <label>사번 : </label>
         <input type="number" name="empId" value="empId">
-        <button type="submit">조회하기</button>
+        <button type="submit" class="btn btn-dark">조회하기</button>
     </form>
     
     <hr>
@@ -66,8 +76,8 @@
         급여 : <input type="number" name="salary"><br>
         보너스율 : <input type="text" name="bonus"><br>
         관리자사번 : (3자리 숫자)<input type="text" name="managerId"><br>
-        입사일 : <input type="date" name="hireDate"><br>
-        <button type="submit">등록하기</button>
+        입사일 : <input type="date" name="hireDate">
+        <button type="submit" class="btn btn-success">등록하기</button>
     </form>
 
     <hr>
@@ -75,8 +85,8 @@
     <p>(재직 -> 퇴직)</p>
     <form action="${ pageContext.servletContext.contextPath }/employee/update" method="post">
         사번 : <input type="text" name="empId"><br>
-        퇴사일 : <input type="date" name="entDate"><br>
-        <button type="submit">직원퇴사</button>
+        퇴사일 : <input type="date" name="entDate">
+        <button type="submit" class="btn btn-warning">직원퇴사</button>
     </form>
 
     <hr>
@@ -85,7 +95,7 @@
     <p>(삭제하고자 하는 직원의 사번을 입력해주세요.)</p>
     <form action="${ pageContext.servletContext.contextPath }/employee/delete" method="post">
         사번 : <input type="text" name="empId">
-        <button type="submit">직원 정보 삭제</button>
+        <button type="submit" class="btn btn-danger">직원 정보 삭제</button>
     </form>
 
 </body>

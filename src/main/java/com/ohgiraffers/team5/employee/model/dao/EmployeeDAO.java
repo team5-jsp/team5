@@ -92,4 +92,26 @@ public class EmployeeDAO {
 
         return result;
     }
+
+    public int deleteEmp(Connection con, String empId) {
+        PreparedStatement pstmt = null;
+
+        int result = 0;
+
+        String query = prop.getProperty("deleteEmp");
+
+        try {
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, empId);
+
+            result = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(pstmt);
+        }
+
+        return result;
+    }
 }

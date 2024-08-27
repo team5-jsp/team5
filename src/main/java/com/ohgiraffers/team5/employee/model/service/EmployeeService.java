@@ -12,9 +12,7 @@ public class EmployeeService {
 
     private final EmployeeDAO empDAO;
 
-    public EmployeeService() {
-
-        empDAO = new EmployeeDAO(); }
+    public EmployeeService() { empDAO = new EmployeeDAO(); }
 
     public List<EmployeeDTO> selectAllEmp() {
 
@@ -23,6 +21,7 @@ public class EmployeeService {
 
         /* 비지니스 로직*/
         List<EmployeeDTO> empList = empDAO.selectAllEmpList(con);
+
 
         close(con);
 

@@ -35,7 +35,7 @@
                 <td>${ emp.jobCode }</td>
                 <td>${ emp.salLevel }</td>
                 <td>${ emp.salary }</td>
-                <td>${ emp.bouns }</td>
+                <td>${ emp.bonus }</td>
                 <td>${ emp.managerId }</td>
                 <td>${ emp.hireDate }</td>
                 <td>${ emp.entDate }</td>

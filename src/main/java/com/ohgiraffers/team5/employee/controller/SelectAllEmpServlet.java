@@ -28,10 +28,10 @@ public class SelectAllEmpServlet extends HttpServlet {
         /* 조회 결과에 따른 뷰 */
         String path = "";
         if (empList != null) {
-            path = "/WEB-INf/views/employee/list.jsp";
+            path = "/WEB-INF/views/employee/employeeList.jsp";
             req.setAttribute("empList", empList);
         } else {
-            path = "/WEB-INf/common/errorPage.jsp";
+            path = "/WEB-INF/common/errorPage.jsp";
             req.setAttribute("message", "전체 직원 조회를 실패했습니다.");
         }
 

@@ -20,17 +20,28 @@ public class SelectOneServlet extends HttpServlet {
         
         //쿼리 진행
         EmployeeService service = new EmployeeService();
-        EmployeeDTO result = service.SelectOneById(Integer.parseInt(req.getParameter("empId")));
-        String url;
+        String id = req.getParameter("empId");
 
-        //실패/성공에 따른 페이지 분리
-        if(result != null){
-            req.setAttribute("employee", result);
-            url = "/WEB-INF/views/employee/showInfo.jsp";
-        }
-        else {
-            req.setAttribute("message", "단일 조회에 실패했습니다.");
+        String url="";
+        //사용자 입력이 없을 때
+        if (id.isEmpty()) {
+            req.setAttribute("message", "사번을 채워주세요.");
             url = "/WEB-INF/views/common/errorPage.jsp";
+        }else {
+            EmployeeDTO result = service.SelectOneById(Integer.parseInt(id));
+        //실패/성공에 따른 페이지 분리
+            if(result == null){
+                req.setAttribute("message", "단일 조회에 실패했습니다. 다시 시도해주세요.");
+                url = "/WEB-INF/views/common/errorPage.jsp"; 
+            }
+            else if(result.getEmpId() == null){
+                req.setAttribute("message", "해당 사번의 사원이 존재하지 않습니다.");
+                url = "/WEB-INF/views/common/errorPage.jsp";
+            }
+            else {
+                req.setAttribute("employee", result);
+                url = "/WEB-INF/views/employee/showInfo.jsp";
+            }
         }
 
         RequestDispatcher view = req.getRequestDispatcher(url);

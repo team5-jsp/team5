@@ -23,7 +23,7 @@
     
     <hr>
 
-    <h3>3. tbl_employee 테이블에서 신규 직원 정보 추가하기</h3>
+    <h3>3. 신규 직원 정보 추가</h3>
     <form action="${ pageContext.servletContext.contextPath }/employee/insert" method="post">
         직원명 : <input type="text" name="empName"><br>
         주민등록번호 : <input type="text" name="empNo"><br>
@@ -71,7 +71,13 @@
     </form>
 
     <hr>
-    
+    <h3>4. 직원 정보 수정</h3>
+    <p>(재직 -> 퇴직)</p>
+    <form action="${ pageContext.servletContext.contextPath }/employee/update" method="post">
+        사번 : <input type="text" name="empId"><br>
+        퇴사일 : <input type="date" name="entDate"><br>
+        <button type="submit">직원퇴사</button>
+    </form>
     
     <hr>
     

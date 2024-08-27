@@ -12,9 +12,7 @@ public class EmployeeService {
 
     private final EmployeeDAO empDAO;
 
-    public EmployeeService() {
-
-        empDAO = new EmployeeDAO(); }
+    public EmployeeService() { empDAO = new EmployeeDAO(); }
 
     public List<EmployeeDTO> selectAllEmp() {
 

@@ -21,7 +21,7 @@ public class InsertEmpServlet extends HttpServlet {
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String deptCode = req.getParameter("deptCode");
-        String jobCode = req.getParameter("email");
+        String jobCode = req.getParameter("jobCode");
         String salLevel = req.getParameter("salLevel");
         int salary = Integer.parseInt(req.getParameter("salary"));
         double bonus = Double.parseDouble(req.getParameter("bonus"));
@@ -49,11 +49,12 @@ public class InsertEmpServlet extends HttpServlet {
 
         int result = empService.insertEmp(emp);
 
+        System.out.println("result = " + result);
         String path = "";
         if(result > 0) {
             path = "/WEB-INF/views/common/successPage.jsp";
-            req.setAttribute("message", "신규 직원 등록에 성공하셨습니다!");
-            resp.sendRedirect(req.getContextPath() + "/WEB_INF/views/common/successPage.jsp");
+            //req.setAttribute("message", "신규 직원 등록에 성공하셨습니다!");
+            //resp.sendRedirect(req.getContextPath() + "/WEB_INF/views/common/successPage.jsp");
 
             req.setAttribute("successCode", "insertEmp");
         } else {

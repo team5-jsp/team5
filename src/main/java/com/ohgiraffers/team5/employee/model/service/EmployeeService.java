@@ -35,8 +35,6 @@ public class EmployeeService {
 
         String newEmpId = empDAO.selectNewEmpId(con);
 
-
-
         close(con);
 
         return newEmpId;
@@ -49,6 +47,7 @@ public class EmployeeService {
         int result = empDAO.insertEmp(con, emp);
 
         if (result > 0) {
+            System.out.println("삽입성공");
             commit(con);
         } else {
             rollback(con);

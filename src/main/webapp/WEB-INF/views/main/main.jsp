@@ -20,7 +20,7 @@
     
     <hr>
 
-    <h3>3. tbl_employee 테이블에서 신규 직원 정보 추가하기</h3>
+    <h3>3. 신규 직원 정보 추가하기</h3>
     <form action="${ pageContext.servletContext.contextPath }/employee/insert" method="post">
         직원명 : <input type="text" name="empName"><br>
         주민등록번호 : <input type="text" name="empNo"><br>

@@ -20,7 +20,14 @@
     
     
     <hr>
-    
+
+    <h3>4. tbl_employee 테이블에서 직원 정보 수정</h3>
+    <p>(직원 퇴사시키기) : POST /employee/update</p>
+    <form action="${ pageContext.servletContext.contextPath }/employee/update" method="post">
+        사번 : <input type="text" name="empId"><br>
+        퇴사일 : <input type="date" name="entDate"><br>
+        <button type="submit">직원퇴사</button>
+    </form>
     
     <hr>
     

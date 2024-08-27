@@ -38,6 +38,30 @@ public class EmployeeDAO {
         return empList;
     }
 
+    public int updateEmp(Connection con, EmployeeDTO emp) {
+
+        PreparedStatement pstmt = null;
+
+        int result = 0;
+
+        String query = prop.getProperty("updateEmp");
+
+        try {
+            pstmt = con.prepareStatement(query);
+            pstmt.setDate(1, emp.getEntDate());
+            pstmt.setString(2, emp.getEmpId());
+
+            result = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(pstmt);
+        }
+
+        return result;
+    }
+
     public int deleteEmp(Connection con, String empId) {
         PreparedStatement pstmt = null;
 

@@ -30,6 +30,25 @@ public class EmployeeService {
 
     }
 
+    public int updateEmp(EmployeeDTO emp) {
+
+        Connection con = getConnection();
+
+        System.out.println("con = " + con);
+
+        int result = empDAO.updateEmp(con, emp);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+
+        close(con);
+
+        return result;
+    }
+
     public int deleteEmp(String empId) {
 
         Connection con = getConnection();
